@@ -6,7 +6,7 @@ import PaginationNumber from './PaginationNumber'
 
 export const BlogListPage = props => {
   const { page = 1, posts, postCount } = props
-  const { NOTION_CONFIG } = useGlobal()
+  const {  } = useGlobal()
   const POSTS_PER_PAGE = siteConfig('POSTS_PER_PAGE', null, NOTION_CONFIG)
   const totalPage = Math.ceil(postCount / POSTS_PER_PAGE)
 
