@@ -10,6 +10,7 @@ import useAdjustStyle from '@/hooks/useAdjustStyle'
 import { GlobalContextProvider } from '@/lib/global'
 import { getBaseLayoutByTheme } from '@/themes/theme'
 import { useRouter } from 'next/router'
+import { Analytics } from "@vercel/analytics/react"
 import { useCallback, useMemo } from 'react'
 import { getQueryParam } from '../lib/utils'
 
@@ -54,6 +55,7 @@ const MyApp = ({ Component, pageProps }) => {
   const enableClerk = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
   const content = (
     <GlobalContextProvider {...pageProps}>
+      <Analytics />
       <GLayout {...pageProps}>
         <SEO {...pageProps} />
         <Component {...pageProps} />
