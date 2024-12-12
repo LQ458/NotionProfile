@@ -12,7 +12,7 @@ import { useEffect } from 'react'
  */
 
 const GiscusComponent = () => {
-  const { isDarkMode } = useGlobal()
+  const { isDarkMode, lang } = useGlobal()
   const theme = isDarkMode ? 'dark' : 'light'
   useEffect(() => {
     loadExternalResource('/js/giscus.js', 'js').then(() => {
@@ -38,7 +38,7 @@ const GiscusComponent = () => {
       data-emit-metadata={siteConfig('COMMENT_GISCUS_EMIT_METADATA')}
       data-input-position={siteConfig('COMMENT_GISCUS_INPUT_POSITION')}
       data-theme={theme}
-      data-lang={siteConfig('COMMENT_GISCUS_LANG')}
+      data-lang={lang}
       data-loading={siteConfig('COMMENT_GISCUS_LOADING')}
       //   crossorigin={siteConfig('COMMENT_GISCUS_CROSSORIGIN')}
     ></div>
