@@ -38,7 +38,7 @@ const GiscusComponent = () => {
       data-emit-metadata={siteConfig('COMMENT_GISCUS_EMIT_METADATA')}
       data-input-position={siteConfig('COMMENT_GISCUS_INPUT_POSITION')}
       data-theme={theme}
-      data-lang={lang}
+      data-lang={lang === 'zh-CN' ? 'zh-CN' : 'en'}
       data-loading={siteConfig('COMMENT_GISCUS_LOADING')}
       //   crossorigin={siteConfig('COMMENT_GISCUS_CROSSORIGIN')}
     ></div>
