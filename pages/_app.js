@@ -11,6 +11,7 @@ import { GlobalContextProvider } from '@/lib/global'
 import { getBaseLayoutByTheme } from '@/themes/theme'
 import { useRouter } from 'next/router'
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { useCallback, useMemo } from 'react'
 import { getQueryParam } from '../lib/utils'
 
@@ -56,6 +57,7 @@ const MyApp = ({ Component, pageProps }) => {
   const content = (
     <GlobalContextProvider {...pageProps}>
       <Analytics />
+      <SpeedInsights />
       <GLayout {...pageProps}>
         <SEO {...pageProps} />
         <Component {...pageProps} />
