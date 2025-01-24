@@ -14,6 +14,7 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { useCallback, useMemo } from 'react'
 import { getQueryParam } from '../lib/utils'
+import Head from 'next/head'
 
 // 各种扩展插件 这个要阻塞引入
 import BLOG from '@/blog.config'
@@ -57,6 +58,9 @@ const MyApp = ({ Component, pageProps }) => {
   const content = (
     <GlobalContextProvider {...pageProps}>
       <Analytics />
+      <Head>
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="0EieTCMoGKotPew3/TVfXg" async></script>
+      </Head>
       <SpeedInsights />
       <GLayout {...pageProps}>
         <SEO {...pageProps} />
